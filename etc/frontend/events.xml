@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="loki_components_repository">
+        <observer
+            name="Yireo_LokiComponentsDebugger::debugRepository"
+            instance="Yireo\LokiComponentsDebugger\Observer\DebugRepository"/>
+    </event>
+
+    <event name="loki_components_blocks">
+        <observer
+            name="Yireo_LokiComponentsDebugger::debugBlocks"
+            instance="Yireo\LokiComponentsDebugger\Observer\DebugBlocks"/>
+    </event>
+</config>
