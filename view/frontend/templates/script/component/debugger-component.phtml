@@ -12,6 +12,12 @@
                     this.currentTab = this.$root.querySelectorAll('[data-tab-name]')[0].getAttribute('data-tab-name');
                 }
 
+                document.addEventListener('yireo-loki-components.component-register', () => {
+                    this.loadComponents();
+                })
+            },
+            reload() {
+                this.loadComponents();
             },
             loadComponents() {
                 try {
@@ -42,9 +48,6 @@
                 this.currentTab = event.target.getAttribute('data-tab-name');
                 LokiComponentsStorage.save('debugger.tab', this.currentTab);
                 this.reload();
-            },
-            reload() {
-                this.loadComponents();
             }
         }));
     });
