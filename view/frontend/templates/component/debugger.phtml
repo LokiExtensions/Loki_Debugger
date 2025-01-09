@@ -2,21 +2,21 @@
 declare(strict_types=1);
 
 use Magento\Framework\View\Element\Template;
-use Yireo\LokiComponents\Component\Debugger\DebuggerViewModel;
+use Yireo\LokiComponents\Util\IdConvertor;
+use Yireo\LokiComponentsDebugger\Component\Debugger\DebuggerViewModel;
 use Yireo\LokiComponents\Factory\ViewModelFactory;
-use Yireo\LokiComponents\Util\ComponentUtil;
 
 /** @var Template $block */
 /** @var ViewModelFactory $viewModelFactory */
 /** @var DebuggerViewModel $viewModel */
-/** @var ComponentUtil $componentUtil */
+/** @var IdConvertor $idConvertor */
 
-$componentUtil = $viewModelFactory->create(ComponentUtil::class);
-$htmlId = $componentUtil->getElementIdByBlockName($block->getNameInLayout());
+$idConvertor = $viewModelFactory->create(IdConvertor::class);
+$htmlId = $idConvertor->toElementId($block->getNameInLayout());
 ?>
-<div class="w-full border-t border-gray-400">
+<div class="hidden md:block w-full border-t border-gray-400">
     <ul class="flex items-stretch overflow-x-auto" role="tablist">
-        <li class="p-4 border-b border-gray-300 p-2">
+        <li class="border-b border-gray-300 p-2">
             Loki Components Debugger
         </li>
         <li>
