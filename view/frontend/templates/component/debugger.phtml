@@ -49,20 +49,18 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
             <table class="table-auto w-full text-xs">
                 <thead>
                 <tr>
-                    <th class="border-b border-gray-300 p-2">Component ID</th>
-                    <th class="border-b border-gray-300 p-2">Component name</th>
+                    <th class="border-b border-gray-300 p-2">Alpine Instance / Component</th>
                     <th class="border-b border-gray-300 p-2">Element ID</th>
-                    <th class="border-b border-gray-300 p-2">Block name</th>
+                    <th class="border-b border-gray-300 p-2">Loki Component Name</th>
+                    <th class="border-b border-gray-300 p-2">Value</th>
                     <th class="border-b border-gray-300 p-2">Details</th>
                 </tr>
                 </thead>
                 <tbody>
-                <template x-for="component in components">
+                <template x-for="component in components" :key="component.id">
                     <tr>
                         <td class="border-b border-gray-300 p-2">
-                            <code x-text="component.id"></code>
-                        </td>
-                        <td class="border-b border-gray-300 p-2">
+                            <strong><code x-text="component.id"></code></strong><br/>
                             <code x-text="component.name"></code>
                         </td>
                         <td class="border-b border-gray-300 p-2">
@@ -72,7 +70,11 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
                             <code x-text="component.blockId"></code>
                         </td>
                         <td class="border-b border-gray-300 p-2">
-                            <code x-text="component.getDetailsString"></code>
+                            <code x-text="component.value"></code>
+                        </td>
+                        <td class="border-b border-gray-300 p-2">
+                            <?php /** @todo Make this CSP compliant */ ?>
+                            <code x-text="component.getDetailsString()"></code>
                         </td>
                     </tr>
                 </template>
