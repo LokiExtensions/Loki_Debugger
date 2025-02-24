@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.3] - 24 February 2025
+### Fixed
+- Default target definitions were dropped when cache was refreshed from non-frontend
+
 ## [0.0.2] - 22 February 2025
 ### Fixed
 -  Add proper README
