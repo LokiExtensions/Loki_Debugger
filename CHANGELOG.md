@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5] - 04 April 2025
+### Fixed
+- Add keywords to composer.json
+- Ignore CICD file in PHPCS
+- Add new MODULE.json with meta-information
+
 ## [0.0.4] - 11 March 2025
 ### Fixed
 - Add module dependencies
