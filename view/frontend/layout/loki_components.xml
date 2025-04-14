@@ -5,7 +5,7 @@
             <block name="loki-components.script.component.debugger" template="Yireo_LokiComponentsDebugger::script/component/debugger-component.phtml"/>
         </referenceContainer>
 
-        <referenceContainer name="before.body.end">
+        <referenceContainer name="loki-scripts">
             <block name="loki-components.debugger" template="Yireo_LokiComponentsDebugger::component/debugger.phtml" before="-"/>
         </referenceContainer>
     </body>
