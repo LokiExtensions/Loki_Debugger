@@ -73,8 +73,7 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
                             <code x-text="component.value"></code>
                         </td>
                         <td class="border-b border-gray-300 p-2">
-                            <?php /** @todo Make this CSP compliant */ ?>
-                            <code x-text="component.getDetailsString()"></code>
+                            <code x-json="component.getDetails"></code>
                         </td>
                     </tr>
                 </template>

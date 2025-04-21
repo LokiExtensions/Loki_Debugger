@@ -1,5 +1,15 @@
 <script>
     document.addEventListener('alpine:init', () => {
+        Alpine.directive('json', (el, { value, expression }, { evaluate }) => {
+            if (expression) {
+                el.textContent = JSON.stringify(evaluate(expression));
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('alpine:init', () => {
         Alpine.data('LokiComponentsDebugger', () => ({
             ...LokiComponentType,
             currentTab: '',
@@ -52,3 +62,4 @@
         }));
     });
 </script>
+
