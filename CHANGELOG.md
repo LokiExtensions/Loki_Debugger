@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.6] - 25 April 2025
+### Fixed
+- Allow to upgrade to LokiComponents 1.0
+- Fix CSP issue with new x-json directive
+- Move scripts from "before.body.end" to new "loki-scripts" container
+
 ## [0.0.5] - 04 April 2025
 ### Fixed
 - Add keywords to composer.json

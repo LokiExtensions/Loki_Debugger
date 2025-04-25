@@ -1,6 +1,6 @@
 {
   "name": "yireo/magento2-loki-components-debugger",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "N/A",
   "keywords": ["dev", "loki-dev"],
   "type": "magento2-module",
