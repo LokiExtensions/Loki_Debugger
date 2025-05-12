@@ -6,5 +6,6 @@
     "components": [
         "loki-components.debugger"
     ],
-    "config": []
+    "config": [],
+    "tests": []
 }
