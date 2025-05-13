@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.7] - 13 May 2025
+### Fixed
+- Update MODULE.json
+- Modules should NOT determine the page layout for reusable handles
+- Allow PHP 8.4 in CI
+
 ## [0.0.6] - 25 April 2025
 ### Fixed
 - Allow to upgrade to LokiComponents 1.0
