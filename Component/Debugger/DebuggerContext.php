@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Yireo\LokiComponentsDebugger\Component\Debugger;
+namespace Loki\Debugger\Component\Debugger;
 
 use Magento\Framework\App\ObjectManager;
 use Yireo\LokiComponents\Component\ComponentContext;
-use Yireo\LokiComponentsDebugger\Util\Debugger;
+use Loki\Debugger\Util\Debugger;
 
 class DebuggerContext extends ComponentContext
 {

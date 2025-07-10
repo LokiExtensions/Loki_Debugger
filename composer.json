@@ -1,6 +1,6 @@
 {
-  "name": "yireo/magento2-loki-components-debugger",
-  "version": "0.0.7",
+  "name": "loki/magento2-debugger",
+  "version": "0.1.0",
   "description": "N/A",
   "keywords": ["dev", "loki-dev"],
   "type": "magento2-module",
@@ -14,7 +14,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "Yireo\\LokiComponentsDebugger\\": ""
+      "Loki\\Debugger\\": ""
     }
   }
 }

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Yireo\LokiComponentsDebugger\Util;
+namespace Loki\Debugger\Util;
 
 class Debugger
 {

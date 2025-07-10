@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Yireo\LokiComponentsDebugger\Component\Debugger;
+namespace Loki\Debugger\Component\Debugger;
 
 use Yireo\LokiComponents\Component\ComponentViewModel;
 

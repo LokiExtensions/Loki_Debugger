@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Yireo\LokiComponentsDebugger\Observer;
+namespace Loki\Debugger\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Yireo\LokiComponents\Component\ComponentInterface;
-use Yireo\LokiComponentsDebugger\Util\Debugger;
+use Loki\Debugger\Util\Debugger;
 
 class DebugRepository implements ObserverInterface
 {

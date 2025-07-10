@@ -2,13 +2,13 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="loki_components_repository_dispatch">
         <observer
-            name="Yireo_LokiComponentsDebugger::debugRepository"
-            instance="Yireo\LokiComponentsDebugger\Observer\DebugRepository"/>
+            name="Loki_Debugger::debugRepository"
+            instance="Loki\Debugger\Observer\DebugRepository"/>
     </event>
 
     <event name="loki_components_blocks">
         <observer
-            name="Yireo_LokiComponentsDebugger::debugBlocks"
-            instance="Yireo\LokiComponentsDebugger\Observer\DebugBlocks"/>
+            name="Loki_Debugger::debugBlocks"
+            instance="Loki\Debugger\Observer\DebugBlocks"/>
     </event>
 </config>

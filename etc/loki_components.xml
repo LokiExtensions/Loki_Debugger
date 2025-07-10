@@ -2,6 +2,6 @@
 <components xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Yireo_LokiComponents:etc/loki_components.xsd">
     <component
         name="loki-components.debugger"
-        context="Yireo\LokiComponentsDebugger\Component\Debugger\DebuggerContext"
-        viewModel="Yireo\LokiComponentsDebugger\Component\Debugger\DebuggerViewModel"/>
+        context="Loki\Debugger\Component\Debugger\DebuggerContext"
+        viewModel="Loki\Debugger\Component\Debugger\DebuggerViewModel"/>
 </components>

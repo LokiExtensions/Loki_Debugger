@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 10 July 2025
+### Refactor
+- Rename `Yireo_LokiComponentsDebugger` to `Loki_Debugger`
+
 ## [0.0.7] - 13 May 2025
 ### Fixed
 - Update MODULE.json
