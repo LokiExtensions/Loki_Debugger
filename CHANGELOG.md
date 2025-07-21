@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 21 July 2025
+### Fixed
+- Rename PHP namespace from `Yireo_LokiComponents` to `Loki_Components`
+- Update deps with `loki/magento2-components`
+
 ## [0.1.0] - 10 July 2025
 ### Refactor
 - Rename `Yireo_LokiComponentsDebugger` to `Loki_Debugger`
