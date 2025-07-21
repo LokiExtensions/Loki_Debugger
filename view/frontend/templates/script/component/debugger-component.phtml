@@ -22,7 +22,7 @@
                     this.currentTab = this.$root.querySelectorAll('[data-tab-name]')[0].getAttribute('data-tab-name');
                 }
 
-                document.addEventListener('yireo-loki-components.component-register', () => {
+                document.addEventListener('loki-components.component-register', () => {
                     this.loadComponents();
                 })
             },

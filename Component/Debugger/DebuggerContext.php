@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Loki\Debugger\Component\Debugger;
 
 use Magento\Framework\App\ObjectManager;
-use Yireo\LokiComponents\Component\ComponentContext;
+use Loki\Components\Component\ComponentContext;
 use Loki\Debugger\Util\Debugger;
 
 class DebuggerContext extends ComponentContext

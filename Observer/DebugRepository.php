@@ -4,7 +4,7 @@ namespace Loki\Debugger\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
-use Yireo\LokiComponents\Component\ComponentInterface;
+use Loki\Components\Component\ComponentInterface;
 use Loki\Debugger\Util\Debugger;
 
 class DebugRepository implements ObserverInterface

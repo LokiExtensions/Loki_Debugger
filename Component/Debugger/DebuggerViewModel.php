@@ -2,7 +2,7 @@
 
 namespace Loki\Debugger\Component\Debugger;
 
-use Yireo\LokiComponents\Component\ComponentViewModel;
+use Loki\Components\Component\ComponentViewModel;
 
 /**
  * @method DebuggerContext getContext()

@@ -3,7 +3,7 @@
     <module name="Loki_Debugger">
         <sequence>
             <module name="Magento_Store"/>
-            <module name="Yireo_LokiComponents"/>
+            <module name="Loki_Components"/>
         </sequence>
     </module>
 </config>

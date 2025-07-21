@@ -1,7 +1,7 @@
 {
     "modules": [
         "Magento_Store",
-        "Yireo_LokiComponents"
+        "Loki_Components"
     ],
     "components": [
         "loki-components.debugger"
