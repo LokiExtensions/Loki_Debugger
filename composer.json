@@ -1,20 +1,23 @@
 {
-  "name": "loki/magento2-debugger",
-  "version": "1.0.0",
-  "description": "N/A",
-  "keywords": ["dev", "loki-dev"],
-  "type": "magento2-module",
-  "require": {
-    "magento/framework": "^103.0",
-    "loki/magento2-components": "^2.0"
-  },
-    "license": "OSL-3.0",
-  "autoload": {
-    "files": [
-      "registration.php"
+    "name": "loki/magento2-debugger",
+    "version": "1.0.0",
+    "description": "N/A",
+    "keywords": [
+        "dev",
+        "loki-dev"
     ],
-    "psr-4": {
-      "Loki\\Debugger\\": ""
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "^103.0",
+        "loki/magento2-components": "^2.0"
+    },
+    "license": "OSL-3.0",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Loki\\Debugger\\": ""
+        }
     }
-  }
 }
