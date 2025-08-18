@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 18 August 2025
+### Fixed
+- A11Y issues
+- Fix a11y tab attributes
+
 ## [1.0.1] - 06 August 2025
 ### Fixed
 - Lower PHP requirement to PHP 8.2+
