@@ -15,11 +15,11 @@ $idConvertor = $viewModelFactory->create(IdConvertor::class);
 $htmlId = $idConvertor->toElementId($block->getNameInLayout());
 ?>
 <div class="hidden md:block w-full border-t border-gray-400">
-    <ul class="flex items-stretch overflow-x-auto" role="tablist">
-        <li class="border-b border-gray-300 p-2">
-            Loki Debugger
-        </li>
-        <li>
+    <div class="flex items-stretch overflow-x-auto" role="tablist">
+        <div class="border-b border-gray-300 p-2">
+            <span role="tab">Loki Debugger</span>
+        </div>
+        <div>
             <button
                 role="tab"
                 aria-controls="tab-server"
@@ -27,10 +27,11 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
                 type="button"
                 @click="switchTab"
                 :class="buttonCssClass"
-                class="inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ">Server Dump
+                class="inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ">
+                Server Dump
             </button>
-        </li>
-        <li>
+        </div>
+        <div>
             <button
                 role="tab"
                 aria-controls="tab-components"
@@ -38,10 +39,11 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
                 type="button"
                 @click="switchTab"
                 :class="buttonCssClass"
-                class="inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ">Registered Components
+                class="inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ">
+                Registered Components
             </button>
-        </li>
-    </ul>
+        </div>
+    </div>
 
     <div>
         <div :class="tabCssClass" class="p-4" data-tab-name="server" id="tab-server">
