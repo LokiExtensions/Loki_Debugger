@@ -21,6 +21,8 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
         </li>
         <li>
             <button
+                role="tab"
+                aria-controls="tab-server"
                 data-tab-name="server"
                 type="button"
                 @click="switchTab"
@@ -30,6 +32,8 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
         </li>
         <li>
             <button
+                role="tab"
+                aria-controls="tab-components"
                 data-tab-name="components"
                 type="button"
                 @click="switchTab"
@@ -40,12 +44,12 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
     </ul>
 
     <div>
-        <div role="tab" :class="tabCssClass" class="p-4" data-tab-name="server">
+        <div :class="tabCssClass" class="p-4" data-tab-name="server" id="tab-server">
             <h3 class="text-xl my-4">Server Dump</h3>
             <pre><?php var_dump($viewModel->getData()) ?></pre>
         </div>
 
-        <div role="tab" :class="tabCssClass" class="p-4"  data-tab-name="components">
+        <div :class="tabCssClass" class="p-4"  data-tab-name="components" id="tab-components">
             <table class="table-auto w-full text-xs">
                 <thead>
                 <tr>
