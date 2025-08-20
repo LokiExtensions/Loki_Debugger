@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <components xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Loki_Components:etc/loki_components.xsd">
     <component
-        name="loki-components.debugger"
+        name="loki-debugger.debugger"
         context="Loki\Debugger\Component\Debugger\DebuggerContext"
         viewModel="Loki\Debugger\Component\Debugger\DebuggerViewModel"/>
 </components>

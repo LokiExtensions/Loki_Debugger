@@ -18,9 +18,9 @@ use Loki\Components\Factory\ViewModelFactory;
 $idConvertor = $viewModelFactory->create(IdConvertor::class);
 $htmlId = $idConvertor->toElementId($block->getNameInLayout());
 ?>
-<div class="<?= $css('hidden md:block w-full border-t border-gray-400', '@todo') ?>">
-    <div class="<?= $css('flex items-stretch overflow-x-auto', '@todo') ?>" role="tablist">
-        <div class="<?= $css('border-b border-gray-300 p-2', '@todo') ?>">
+<div class="<?= $css('hidden md:block w-full border-t border-gray-400', 'td') ?>">
+    <div class="<?= $css('flex items-stretch overflow-x-auto', 'td') ?>" role="tablist">
+        <div class="<?= $css('border-b border-gray-300 p-2', 'td') ?>">
             <span role="tab">Loki Debugger</span>
         </div>
         <div>
@@ -30,8 +30,8 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
                 data-tab-name="server"
                 type="button"
                 @click="switchTab"
-                :class="<?= $css('buttonCssClass', '@todo') ?>"
-                class="<?= $css('inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ', '@todo') ?>">
+                :class="buttonCssClass"
+                class="<?= $css('inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ', 'button-server') ?>">
                 Server Dump
             </button>
         </div>
@@ -42,47 +42,59 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
                 data-tab-name="components"
                 type="button"
                 @click="switchTab"
-                :class="<?= $css('buttonCssClass', '@todo') ?>"
-                class="<?= $css('inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ', '@todo') ?>">
+                :class="buttonCssClass"
+                class="<?= $css('inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ', 'button-components') ?>">
                 Registered Components
             </button>
         </div>
     </div>
 
     <div>
-        <div :class="<?= $css('tabCssClass', '@todo') ?>" class="<?= $css('p-4', '@todo') ?>" data-tab-name="server" id="tab-server">
-            <h3 class="<?= $css('text-xl my-4', '@todo') ?>">Server Dump</h3>
+        <div :class="tabCssClass" class="<?= $css('p-4', 'tab-server') ?>" data-tab-name="server" id="tab-server">
+            <h3 class="<?= $css('text-xl my-4', 'tab-heading') ?>">
+                Server Dump
+            </h3>
             <pre><?php var_dump($viewModel->getData()) ?></pre>
         </div>
 
-        <div :class="<?= $css('tabCssClass', '@todo') ?>" class="<?= $css('p-4', '@todo') ?>"  data-tab-name="components" id="tab-components">
-            <table class="<?= $css('table-auto w-full text-xs', '@todo') ?>">
+        <div :class="tabCssClass" class="<?= $css('p-4', 'tab-components') ?>"  data-tab-name="components" id="tab-components">
+            <table class="<?= $css('table-auto w-full text-xs', 'table') ?>">
                 <thead>
                 <tr>
-                    <th class="<?= $css('border-b border-gray-300 p-2', '@todo') ?>">Alpine Instance / Component</th>
-                    <th class="<?= $css('border-b border-gray-300 p-2', '@todo') ?>">Element ID</th>
-                    <th class="<?= $css('border-b border-gray-300 p-2', '@todo') ?>">Loki Component Name</th>
-                    <th class="<?= $css('border-b border-gray-300 p-2', '@todo') ?>">Value</th>
-                    <th class="<?= $css('border-b border-gray-300 p-2', '@todo') ?>">Details</th>
+                    <th class="<?= $css('border-b border-gray-300 p-2', 'th') ?>">
+                        Alpine Instance / Component
+                    </th>
+                    <th class="<?= $css('border-b border-gray-300 p-2', 'th') ?>">
+                        Element ID
+                    </th>
+                    <th class="<?= $css('border-b border-gray-300 p-2', 'th') ?>">
+                        Loki Component Name
+                    </th>
+                    <th class="<?= $css('border-b border-gray-300 p-2', 'th') ?>">
+                        Value
+                    </th>
+                    <th class="<?= $css('border-b border-gray-300 p-2', 'th') ?>">
+                        Details
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
                 <template x-for="component in components" :key="component.id">
                     <tr>
-                        <td class="<?= $css('border-b border-gray-300 p-2', '@todo') ?>">
+                        <td class="<?= $css('border-b border-gray-300 p-2', 'td') ?>">
                             <strong><code x-text="component.id"></code></strong><br/>
                             <code x-text="component.name"></code>
                         </td>
-                        <td class="<?= $css('border-b border-gray-300 p-2', '@todo') ?>">
+                        <td class="<?= $css('border-b border-gray-300 p-2', 'td') ?>">
                             <code x-text="component.elementId"></code>
                         </td>
-                        <td class="<?= $css('border-b border-gray-300 p-2', '@todo') ?>">
+                        <td class="<?= $css('border-b border-gray-300 p-2', 'td') ?>">
                             <code x-text="component.blockId"></code>
                         </td>
-                        <td class="<?= $css('border-b border-gray-300 p-2', '@todo') ?>">
+                        <td class="<?= $css('border-b border-gray-300 p-2', 'td') ?>">
                             <code x-text="component.value"></code>
                         </td>
-                        <td class="<?= $css('border-b border-gray-300 p-2', '@todo') ?>">
+                        <td class="<?= $css('border-b border-gray-300 p-2', 'td') ?>">
                             <code x-json="component.getDetails"></code>
                         </td>
                     </tr>
