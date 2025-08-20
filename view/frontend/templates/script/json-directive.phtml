@@ -1,0 +1,16 @@
+<?php
+declare(strict_types=1);
+
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+?>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.directive('json', (el, { value, expression }, { evaluate }) => {
+            if (expression) {
+                el.textContent = JSON.stringify(evaluate(expression));
+            }
+        });
+    });
+</script>

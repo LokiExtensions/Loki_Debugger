@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 /** @version 1.0.2 */
 
+use Loki\CssUtils\Util\CssClass;
 use Magento\Framework\View\Element\Template;
 use Loki\Components\Util\IdConvertor;
 use Loki\Debugger\Component\Debugger\DebuggerViewModel;
@@ -12,6 +13,7 @@ use Loki\Components\Factory\ViewModelFactory;
 /** @var ViewModelFactory $viewModelFactory */
 /** @var DebuggerViewModel $viewModel */
 /** @var IdConvertor $idConvertor */
+/** @var CssClass $css */
 
 $idConvertor = $viewModelFactory->create(IdConvertor::class);
 $htmlId = $idConvertor->toElementId($block->getNameInLayout());
