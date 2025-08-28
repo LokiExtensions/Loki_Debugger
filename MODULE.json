@@ -4,7 +4,7 @@
         "Loki_Components"
     ],
     "components": [
-        "loki-components.debugger"
+        "loki-debugger.debugger"
     ],
     "config": [],
     "tests": []
