@@ -30,7 +30,7 @@ use Magento\Framework\View\Element\Template;
             },
             loadComponents() {
                 try {
-                    this.components = Alpine.store('components').getComponents();
+                    this.components = Alpine.store('LokiComponents').getComponents();
                 } catch (e) {
                 }
             },
