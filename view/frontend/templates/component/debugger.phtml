@@ -29,7 +29,7 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
                 aria-controls="tab-server"
                 data-tab-name="server"
                 type="button"
-                @click="switchTab"
+                @click.prevent="switchTab"
                 :class="buttonCssClass"
                 class="<?= $css('inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ', 'button-server') ?>">
                 Server Dump
@@ -41,7 +41,7 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
                 aria-controls="tab-components"
                 data-tab-name="components"
                 type="button"
-                @click="switchTab"
+                @click.prevent="switchTab"
                 :class="buttonCssClass"
                 class="<?= $css('inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ', 'button-components') ?>">
                 Registered Components
