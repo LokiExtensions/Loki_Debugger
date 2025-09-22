@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="loki.script.component">
+        <referenceBlock name="loki.script.component">
             <block name="loki-debugger.script.component.debugger" template="Loki_Debugger::script/component/debugger-component.phtml"/>
-        </referenceContainer>
+        </referenceBlock>
 
         <referenceContainer name="loki.script">
             <block name="loki-debugger.json-directive" template="Loki_Debugger::script/json-directive.phtml" />
