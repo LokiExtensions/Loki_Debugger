@@ -5,9 +5,9 @@
             <block name="loki-debugger.script.component.debugger" template="Loki_Debugger::script/component/debugger-component.phtml"/>
         </referenceBlock>
 
-        <referenceContainer name="loki.script">
+        <referenceBlock name="loki.script">
             <block name="loki-debugger.json-directive" template="Loki_Debugger::script/json-directive.phtml" />
-        </referenceContainer>
+        </referenceBlock>
 
         <referenceContainer name="before.body.end">
             <block name="loki-debugger.debugger" template="Loki_Debugger::component/debugger.phtml" />
