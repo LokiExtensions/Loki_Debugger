@@ -17,6 +17,5 @@
         "loki-debugger.debugger"
     ],
     "config": [],
-    "tests": [],
-    "phpstan_level": "5"
+    "tests": []
 }
