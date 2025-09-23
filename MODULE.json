@@ -1,7 +1,17 @@
 {
+    "sequence": [
+        "Loki_Components",
+        "Magento_Store"
+    ],
     "modules": [
+        "Loki_Base",
+        "Loki_Components",
+        "Loki_CssUtils",
+        "Magento_Backend",
+        "Magento_Config",
+        "Magento_Customer",
         "Magento_Store",
-        "Loki_Components"
+        "Yireo_CspUtilities"
     ],
     "components": [
         "loki-debugger.debugger"
