@@ -4,6 +4,7 @@
         <sequence>
             <module name="Magento_Store"/>
             <module name="Loki_Components"/>
+            <module name="Loki_CssUtils"/>
         </sequence>
     </module>
 </config>
