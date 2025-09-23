@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.6] - 23 September 2025
+### Fixed
+- Rename loki.script from container to block to allow caching
+- Change containers into blocks to allow for caching
+- Add `.prevent` modifier to `@click` event handler
+- Rename Alpine store checkout to LokiCheckout, components to LokiComponents
+- Rename loki-scripts to loki.script
+
 ## [1.0.5] - 28 August 2025
 ### Fixed
 - Add CI files
