@@ -11,4 +11,11 @@
             name="Loki_Debugger::debugBlocks"
             instance="Loki\Debugger\Observer\DebugBlocks"/>
     </event>
+
+    <event name="view_block_abstract_to_html_after">
+        <observer
+            name="Loki_Debugger::addBlockHints"
+            instance="Loki\Debugger\Observer\AddBlockHints"
+        />
+    </event>
 </config>
