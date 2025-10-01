@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.7] - 01 October 2025
+### Fixed
+- Move HTML hints from LokiTheme_LumaComponents to Loki_Debugger
+- Update README
+
 ## [1.0.6] - 23 September 2025
 ### Fixed
 - Rename loki.script from container to block to allow caching
