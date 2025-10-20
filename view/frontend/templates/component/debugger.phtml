@@ -18,9 +18,9 @@ use Loki\Components\Factory\ViewModelFactory;
 $idConvertor = $viewModelFactory->create(IdConvertor::class);
 $htmlId = $idConvertor->toElementId($block->getNameInLayout());
 ?>
-<div class="<?= $escaper->escapeHtmlAttr($css('hidden md:block w-full border-t border-gray-400', 'td')) ?>">
-    <div class="<?= $escaper->escapeHtmlAttr($css('flex items-stretch overflow-x-auto', 'td')) ?>" role="tablist">
-        <div class="<?= $escaper->escapeHtmlAttr($css('border-b border-gray-300 p-2', 'td')) ?>">
+<div class="<?= $escaper->escapeHtml($css('hidden md:block w-full border-t border-gray-400', 'td')) ?>">
+    <div class="<?= $escaper->escapeHtml($css('flex items-stretch overflow-x-auto', 'td')) ?>" role="tablist">
+        <div class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
             <span role="tab">Loki Debugger</span>
         </div>
         <div>
@@ -31,7 +31,7 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
                 type="button"
                 @click.prevent="switchTab"
                 :class="buttonCssClass"
-                class="<?= $escaper->escapeHtmlAttr($css('inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ', 'button-server')) ?>">
+                class="<?= $escaper->escapeHtml($css('inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ', 'button-server')) ?>">
                 Server Dump
             </button>
         </div>
@@ -43,37 +43,37 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
                 type="button"
                 @click.prevent="switchTab"
                 :class="buttonCssClass"
-                class="<?= $escaper->escapeHtmlAttr($css('inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ', 'button-components')) ?>">
+                class="<?= $escaper->escapeHtml($css('inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ', 'button-components')) ?>">
                 Registered Components
             </button>
         </div>
     </div>
 
     <div>
-        <div :class="tabCssClass" class="<?= $escaper->escapeHtmlAttr($css('p-4', 'tab-server')) ?>" data-tab-name="server" id="tab-server">
-            <h3 class="<?= $escaper->escapeHtmlAttr($css('text-xl my-4', 'tab-heading')) ?>">
+        <div :class="tabCssClass" class="<?= $escaper->escapeHtml($css('p-4', 'tab-server')) ?>" data-tab-name="server" id="tab-server">
+            <h3 class="<?= $escaper->escapeHtml($css('text-xl my-4', 'tab-heading')) ?>">
                 Server Dump
             </h3>
             <pre><?php var_dump($viewModel->getData()) ?></pre>
         </div>
 
-        <div :class="tabCssClass" class="<?= $escaper->escapeHtmlAttr($css('p-4', 'tab-components')) ?>"  data-tab-name="components" id="tab-components">
-            <table class="<?= $escaper->escapeHtmlAttr($css('table-auto w-full text-xs', 'table')) ?>">
+        <div :class="tabCssClass" class="<?= $escaper->escapeHtml($css('p-4', 'tab-components')) ?>"  data-tab-name="components" id="tab-components">
+            <table class="<?= $escaper->escapeHtml($css('table-auto w-full text-xs', 'table')) ?>">
                 <thead>
                 <tr>
-                    <th class="<?= $escaper->escapeHtmlAttr($css('border-b border-gray-300 p-2', 'th')) ?>">
+                    <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
                         Alpine Instance / Component
                     </th>
-                    <th class="<?= $escaper->escapeHtmlAttr($css('border-b border-gray-300 p-2', 'th')) ?>">
+                    <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
                         Element ID
                     </th>
-                    <th class="<?= $escaper->escapeHtmlAttr($css('border-b border-gray-300 p-2', 'th')) ?>">
+                    <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
                         Loki Component Name
                     </th>
-                    <th class="<?= $escaper->escapeHtmlAttr($css('border-b border-gray-300 p-2', 'th')) ?>">
+                    <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
                         Value
                     </th>
-                    <th class="<?= $escaper->escapeHtmlAttr($css('border-b border-gray-300 p-2', 'th')) ?>">
+                    <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
                         Details
                     </th>
                 </tr>
@@ -81,20 +81,20 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
                 <tbody>
                 <template x-for="component in components" :key="component.id">
                     <tr>
-                        <td class="<?= $escaper->escapeHtmlAttr($css('border-b border-gray-300 p-2', 'td')) ?>">
+                        <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
                             <strong><code x-text="component.id"></code></strong><br/>
                             <code x-text="component.name"></code>
                         </td>
-                        <td class="<?= $escaper->escapeHtmlAttr($css('border-b border-gray-300 p-2', 'td')) ?>">
+                        <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
                             <code x-text="component.elementId"></code>
                         </td>
-                        <td class="<?= $escaper->escapeHtmlAttr($css('border-b border-gray-300 p-2', 'td')) ?>">
+                        <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
                             <code x-text="component.blockId"></code>
                         </td>
-                        <td class="<?= $escaper->escapeHtmlAttr($css('border-b border-gray-300 p-2', 'td')) ?>">
+                        <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
                             <code x-text="component.value"></code>
                         </td>
-                        <td class="<?= $escaper->escapeHtmlAttr($css('border-b border-gray-300 p-2', 'td')) ?>">
+                        <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
                             <code x-json="component.getDetails"></code>
                         </td>
                     </tr>
