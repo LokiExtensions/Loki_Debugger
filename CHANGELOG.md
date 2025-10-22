@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.8] - 22 October 2025
+### Fixed
+- Do not escape `$css()` with `escapeHtmlAttr()` but `escapeHtml()`
+
 ## [1.0.7] - 01 October 2025
 ### Fixed
 - Move HTML hints from LokiTheme_LumaComponents to Loki_Debugger
