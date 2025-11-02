@@ -1,7 +1,7 @@
 {
-    "name": "loki\/magento2-debugger",
+    "name": "loki/magento2-debugger",
     "version": "1.0.8",
-    "description": "N\/A",
+    "description": "N/A",
     "keywords": [
         "dev",
         "loki-core",
@@ -9,9 +9,9 @@
     ],
     "type": "magento2-module",
     "require": {
-        "loki\/magento2-components": "^2.0",
-        "loki\/magento2-css-utils": "^1.0",
-        "magento\/framework": "^103.0"
+        "loki/magento2-components": "^2.0",
+        "loki/magento2-css-utils": "^1.0",
+        "magento/framework": "^103.0"
     },
     "license": "OSL-3.0",
     "autoload": {
