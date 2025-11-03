@@ -4,8 +4,8 @@
     "description": "N/A",
     "keywords": [
         "dev",
-        "loki-core",
-        "loki-dev"
+        "loki-dev",
+        "loki-components"
     ],
     "type": "magento2-module",
     "require": {
