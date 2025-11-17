@@ -32,6 +32,7 @@ class AddBlockHints implements ObserverInterface
         if ($this->isDeveloperMode()) {
             $html = "<!-- LOKI DEBUGGER: TEMPLATE: ".$block->getTemplateFile()." -->\n".$html;
             $html = "<!-- LOKI DEBUGGER: BLOCK: ".$block->getNameInLayout()." -->\n".$html;
+            $html = "<!-- LOKI DEBUGGER: SORT ORDER: ".$block->getSortOrder()." -->\n".$html;
         }
 
         $transport->setHtml($html);
