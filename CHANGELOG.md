@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.9] - 21 November 2025
+### Fixed
+- Convert sort order in HTML hint to 0
+- Debug sortOrder
+- Update composer keywords
+- Update composer keywords
+- Update composer keywords
+
 ## [1.0.8] - 22 October 2025
 ### Fixed
 - Do not escape `$css()` with `escapeHtmlAttr()` but `escapeHtml()`
