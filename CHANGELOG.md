@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.10] - 23 January 2026
+### Fixed
+- Add new GitHub Action workflows
+- Copy generic CI/CD files
+
 ## [1.0.9] - 21 November 2025
 ### Fixed
 - Convert sort order in HTML hint to 0
