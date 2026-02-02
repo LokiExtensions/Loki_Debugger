@@ -3,12 +3,15 @@
 namespace Loki\Debugger\Component\Debugger;
 
 use Loki\Components\Component\ComponentViewModel;
+use Loki\Debugger\Util\Debugger;
 
-/**
- * @method DebuggerContext getContext()
- */
 class DebuggerViewModel extends ComponentViewModel
 {
+    public function __construct(
+        private Debugger $debugger,
+    ) {
+    }
+
     public function getJsComponentName(): ?string
     {
         return 'LokiComponentsDebugger';
@@ -16,6 +19,6 @@ class DebuggerViewModel extends ComponentViewModel
 
     public function getData(): array
     {
-        return $this->getContext()->getDebugger()->getData();
+        return $this->debugger->getData();
     }
 }
