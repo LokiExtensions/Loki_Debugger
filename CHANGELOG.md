@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.11] - 03 February 2026
+### Fixed
+- Rewrite to composable AbstractComponentContext
+
 ## [1.0.10] - 23 January 2026
 ### Fixed
 - Add new GitHub Action workflows
