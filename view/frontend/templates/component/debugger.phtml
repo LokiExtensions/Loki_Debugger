@@ -1,24 +1,25 @@
 <?php
 declare(strict_types=1);
 
-/** @version 1.0.11 */
-
 use Loki\CssUtils\Util\CssClass;
+use Magento\Framework\Escaper;
 use Magento\Framework\View\Element\Template;
 use Loki\Components\Util\IdConvertor;
 use Loki\Debugger\Component\Debugger\DebuggerViewModel;
 use Loki\Components\Factory\ViewModelFactory;
 
+/** @version 1.0.11 */
 /** @var Template $block */
 /** @var ViewModelFactory $viewModelFactory */
 /** @var DebuggerViewModel $viewModel */
 /** @var IdConvertor $idConvertor */
 /** @var CssClass $css */
+/** @var Escaper $escaper */
 
 $idConvertor = $viewModelFactory->create(IdConvertor::class);
 $htmlId = $idConvertor->toElementId($block->getNameInLayout());
 ?>
-<div class="<?= $escaper->escapeHtml($css('hidden md:block w-full border-t border-gray-400', 'td')) ?>">
+<div class="<?= $escaper->escapeHtml($css('fixed bottom-0 left-0 right-0 h-64 md:block w-full border-t border-gray-400 bg-white', 'td')) ?>">
     <div class="<?= $escaper->escapeHtml($css('flex items-stretch overflow-x-auto', 'td')) ?>" role="tablist">
         <div class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
             <span role="tab">Loki Debugger</span>
