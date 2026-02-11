@@ -1,0 +1,25 @@
+<?php
+declare(strict_types=1);
+
+use Loki\CssUtils\Util\CssClass;
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+/** @var CssClass $css */
+/** @var Escaper $escaper */
+
+$tabName = $block->getTabName();
+$tabLabel = $block->getTabLabel();
+?>
+<div>
+    <button
+        role="tab"
+        aria-controls="tab-<?= $tabName ?>"
+        data-tab-name="<?= $tabName ?>"
+        type="button"
+        @click.prevent="switchTab"
+        :class="buttonCssClass">
+        <?= __($tabLabel) ?>
+    </button>
+</div>

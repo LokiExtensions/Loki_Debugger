@@ -6,11 +6,41 @@
         </referenceBlock>
 
         <referenceBlock name="loki.script">
-            <block name="loki-debugger.json-directive" template="Loki_Debugger::script/json-directive.phtml" />
+            <block name="loki-debugger.json-directive" template="Loki_Debugger::script/json-directive.phtml"/>
         </referenceBlock>
 
         <referenceContainer name="before.body.end">
-            <block name="loki-debugger.debugger" template="Loki_Debugger::component/debugger.phtml" />
+            <block name="loki-debugger.debugger" template="Loki_Debugger::component/debugger.phtml">
+                <block
+                    name="loki-debugger.debugger.tab-button.server-dump"
+                    template="Loki_Debugger::component/debugger/tab-button/generic.phtml"
+                >
+                    <arguments>
+                        <argument name="tab_name" xsi:type="string">server-dump</argument>
+                        <argument name="tab_label" xsi:type="string">Server Dump</argument>
+                    </arguments>
+                </block>
+
+                <block
+                    name="loki-debugger.debugger.tab-button.components"
+                    template="Loki_Debugger::component/debugger/tab-button/generic.phtml"
+                >
+                    <arguments>
+                        <argument name="tab_name" xsi:type="string">components</argument>
+                        <argument name="tab_label" xsi:type="string">Registered Components</argument>
+                    </arguments>
+                </block>
+
+                <block
+                    name="loki-debugger.debugger.tab.server-dump"
+                    template="Loki_Debugger::component/debugger/tab/server-dump.phtml"
+                />
+
+                <block
+                    name="loki-debugger.debugger.tab.components"
+                    template="Loki_Debugger::component/debugger/tab/components.phtml"
+                />
+            </block>
         </referenceContainer>
     </body>
 </page>

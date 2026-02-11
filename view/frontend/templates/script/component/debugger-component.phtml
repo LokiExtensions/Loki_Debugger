@@ -12,7 +12,14 @@ use Magento\Framework\View\Element\Template;
             ...LokiComponentType,
             currentTab: '',
             components: [],
+            visible: true,
             init() {
+                this.visible = parseInt(LokiComponentsStorage.load('debugger.visible')) === 1;
+                const toolbarHeight = parseInt(LokiComponentsStorage.load('debugger.height')) || 100;
+                if (toolbarHeight) {
+                    this.$refs.toolbar.style.height = toolbarHeight + "px";
+                }
+
                 this.loadComponents();
 
                 this.currentTab = LokiComponentsStorage.load('debugger.tab');
@@ -22,7 +29,33 @@ use Magento\Framework\View\Element\Template;
 
                 document.addEventListener('loki-components.component-register', () => {
                     this.loadComponents();
-                })
+                });
+
+                let startY = 0;
+                let startHeight = 0;
+                this.$refs.resizer.addEventListener("mousedown", (e) => {
+                    startY = e.clientY;
+                    startHeight = this.$refs.toolbar.offsetHeight;
+
+                    document.addEventListener("mousemove", onDrag);
+                    document.addEventListener("mouseup", stopDrag);
+                });
+
+                const onDrag = (e) => {
+                    const delta = e.clientY - startY;
+                    const newHeight = startHeight - delta;
+                    this.$refs.toolbar.style.height = newHeight + "px";
+                    LokiComponentsStorage.save('debugger.height', newHeight);
+                }
+
+                const stopDrag = () => {
+                    document.removeEventListener("mousemove", onDrag);
+                    document.removeEventListener("mouseup", stopDrag);
+                }
+            },
+            toggleVisibility() {
+                this.visible = !this.visible;
+                LokiComponentsStorage.save('debugger.visible', this.visible ? 1 : 0);
             },
             reload() {
                 this.loadComponents();
@@ -37,12 +70,13 @@ use Magento\Framework\View\Element\Template;
                 return tabName === this.currentTab;
             },
             buttonCssClass() {
+                const defaultCss = 'inline-flex rounded-t-lg border-t border-l border-r p-4';
                 const tabName = this.$el.getAttribute('data-tab-name');
                 if (this.isSelected(tabName)) {
-                    return 'border-transparent bg-white';
+                    return defaultCss + ' border-transparent bg-orange-50';
                 }
 
-                return 'border-gray-200 bg-zinc-200';
+                return defaultCss + ' border-transparent text-white';
             },
             tabCssClass() {
                 const tabName = this.$el.getAttribute('data-tab-name');

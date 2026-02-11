@@ -1,0 +1,59 @@
+<?php
+declare(strict_types=1);
+
+use Loki\CssUtils\Util\CssClass;
+use Loki\Debugger\Component\Debugger\DebuggerViewModel;
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+/** @var CssClass $css */
+/** @var Escaper $escaper */
+/** @var DebuggerViewModel $viewModel */
+
+?>
+<div :class="tabCssClass" class="<?= $escaper->escapeHtml($css('p-4', 'tab-components')) ?>"  data-tab-name="components" id="tab-components">
+    <table class="<?= $escaper->escapeHtml($css('table-auto w-full text-xs', 'table')) ?>">
+        <thead>
+        <tr>
+            <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
+                Alpine Instance / Component
+            </th>
+            <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
+                Element ID
+            </th>
+            <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
+                Loki Component Name
+            </th>
+            <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
+                Value
+            </th>
+            <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
+                Details
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <template x-for="component in components" :key="component.id">
+            <tr>
+                <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
+                    <strong><code x-text="component.id"></code></strong><br/>
+                    <code x-text="component.name"></code>
+                </td>
+                <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
+                    <code x-text="component.elementId"></code>
+                </td>
+                <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
+                    <code x-text="component.blockId"></code>
+                </td>
+                <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
+                    <code x-text="component.value"></code>
+                </td>
+                <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
+                    <code x-json="component.getDetails"></code>
+                </td>
+            </tr>
+        </template>
+        </tbody>
+    </table>
+</div>

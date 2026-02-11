@@ -1,12 +1,13 @@
 <?php
 declare(strict_types=1);
 
+use Loki\Components\Factory\ViewModelFactory;
+use Loki\Components\Util\Block\ChildRenderer;
+use Loki\Components\Util\IdConvertor;
 use Loki\CssUtils\Util\CssClass;
+use Loki\Debugger\Component\Debugger\DebuggerViewModel;
 use Magento\Framework\Escaper;
 use Magento\Framework\View\Element\Template;
-use Loki\Components\Util\IdConvertor;
-use Loki\Debugger\Component\Debugger\DebuggerViewModel;
-use Loki\Components\Factory\ViewModelFactory;
 
 /** @version 1.0.11 */
 /** @var Template $block */
@@ -15,94 +16,27 @@ use Loki\Components\Factory\ViewModelFactory;
 /** @var IdConvertor $idConvertor */
 /** @var CssClass $css */
 /** @var Escaper $escaper */
+/** @var ChildRenderer $childRenderer */
 
 $idConvertor = $viewModelFactory->create(IdConvertor::class);
 $htmlId = $idConvertor->toElementId($block->getNameInLayout());
 ?>
-<div class="<?= $escaper->escapeHtml($css('fixed bottom-0 left-0 right-0 h-64 md:block w-full border-t border-gray-400 bg-white', 'td')) ?>">
-    <div class="<?= $escaper->escapeHtml($css('flex items-stretch overflow-x-auto', 'td')) ?>" role="tablist">
-        <div class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
-            <span role="tab">Loki Debugger</span>
-        </div>
-        <div>
-            <button
-                role="tab"
-                aria-controls="tab-server"
-                data-tab-name="server"
-                type="button"
-                @click.prevent="switchTab"
-                :class="buttonCssClass"
-                class="<?= $escaper->escapeHtml($css('inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ', 'button-server')) ?>">
-                Server Dump
-            </button>
-        </div>
-        <div>
-            <button
-                role="tab"
-                aria-controls="tab-components"
-                data-tab-name="components"
-                type="button"
-                @click.prevent="switchTab"
-                :class="buttonCssClass"
-                class="<?= $escaper->escapeHtml($css('inline-flex rounded-t-lg border-t border-l border-r p-4 border-gray-300 ', 'button-components')) ?>">
-                Registered Components
-            </button>
-        </div>
-    </div>
+<div class="<?= $escaper->escapeHtml($css('')) ?>">
+    <button class="fixed bottom-0 right-0 bg-orange-500 text-white p-4 z-20" @click="toggleVisibility">
+        <span role="tab">
+            <?= __('Loki Debugger') ?>
+        </span>
+    </button>
 
-    <div>
-        <div :class="tabCssClass" class="<?= $escaper->escapeHtml($css('p-4', 'tab-server')) ?>" data-tab-name="server" id="tab-server">
-            <h3 class="<?= $escaper->escapeHtml($css('text-xl my-4', 'tab-heading')) ?>">
-                Server Dump
-            </h3>
-            <pre><?php var_dump($viewModel->getData()) ?></pre>
+    <div x-show="visible" x-cloak class="<?= $escaper->escapeHtml($css('fixed bottom-0 left-0 right-0 h-64 md:block w-full border-t border-orange-500 bg-orange-50', 'tabs')) ?>" x-ref="toolbar">
+        <div class="absolute top-0 left-0 right-0" style="height:10px; cursor: ns-resize" x-ref="resizer"></div>
+
+        <div class="<?= $escaper->escapeHtml($css('flex items-stretch overflow-x-auto px-2 pt-2 bg-orange-500', 'td')) ?>" role="tablist">
+            <?= $childRenderer->all($block, 'loki-debugger.debugger.tab-button.') ?>
         </div>
 
-        <div :class="tabCssClass" class="<?= $escaper->escapeHtml($css('p-4', 'tab-components')) ?>"  data-tab-name="components" id="tab-components">
-            <table class="<?= $escaper->escapeHtml($css('table-auto w-full text-xs', 'table')) ?>">
-                <thead>
-                <tr>
-                    <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
-                        Alpine Instance / Component
-                    </th>
-                    <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
-                        Element ID
-                    </th>
-                    <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
-                        Loki Component Name
-                    </th>
-                    <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
-                        Value
-                    </th>
-                    <th class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'th')) ?>">
-                        Details
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <template x-for="component in components" :key="component.id">
-                    <tr>
-                        <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
-                            <strong><code x-text="component.id"></code></strong><br/>
-                            <code x-text="component.name"></code>
-                        </td>
-                        <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
-                            <code x-text="component.elementId"></code>
-                        </td>
-                        <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
-                            <code x-text="component.blockId"></code>
-                        </td>
-                        <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
-                            <code x-text="component.value"></code>
-                        </td>
-                        <td class="<?= $escaper->escapeHtml($css('border-b border-gray-300 p-2', 'td')) ?>">
-                            <code x-json="component.getDetails"></code>
-                        </td>
-                    </tr>
-                </template>
-                </tbody>
-            </table>
+        <div style="overflow:auto">
+            <?= $childRenderer->all($block, 'loki-debugger.debugger.tab.') ?>
         </div>
     </div>
 </div>
-
