@@ -35,7 +35,7 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
             <?= $childRenderer->all($block, 'loki-debugger.debugger.tab-button.') ?>
         </div>
 
-        <div style="overflow:auto">
+        <div style="height:100%;overflow:scroll">
             <?= $childRenderer->all($block, 'loki-debugger.debugger.tab.') ?>
         </div>
     </div>
