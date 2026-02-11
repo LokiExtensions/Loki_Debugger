@@ -3,7 +3,7 @@
     <type name="Loki\Components\Util\DefaultTargets">
         <arguments>
             <argument name="targets" xsi:type="array">
-                <item name="debugger" xsi:type="string">loki-components.debugger</item>
+                <item name="debugger" xsi:type="string">loki-debugger.debugger</item>
             </argument>
         </arguments>
     </type>
