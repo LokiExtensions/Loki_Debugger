@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 12 February 2026
+### Added
+- Add scrolling within toolbar
+- Make tabs of toolbar extensable
+- Fix position of debug bar in bottom
+
+### Fixed
+- Debugger was never properly set as global component target
+
 ## [1.0.11] - 03 February 2026
 ### Fixed
 - Rewrite to composable AbstractComponentContext
