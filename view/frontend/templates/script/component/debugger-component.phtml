@@ -24,7 +24,10 @@ use Magento\Framework\View\Element\Template;
 
                 this.currentTab = LokiComponentsStorage.load('debugger.tab');
                 if (!this.currentTab) {
-                    this.currentTab = this.$root.querySelectorAll('[data-tab-name]')[0].getAttribute('data-tab-name');
+                    const defaultTab = this.$root.querySelectorAll('[data-tab-name]')[0];
+                    if (defaultTab) {
+                        this.currentTab = defaultTab.getAttribute('data-tab-name');
+                    }
                 }
 
                 document.addEventListener('loki-components.component-register', () => {
