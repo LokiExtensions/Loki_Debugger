@@ -17,7 +17,7 @@ $viewModel = $block->getAncestorBlock()->getViewModel();
 ?>
 <div :class="tabCssClass" class="<?= $escaper->escapeHtml($css('p-4')) ?>" data-tab-name="server-dump" id="tab-server-dump">
     <h3 class="<?= $escaper->escapeHtml($css('text-xl my-4', 'tab-heading')) ?>">
-        <?= __('Server Dump') ?>
+        <?= $escaper->escapeHtml(__('Server Dump')) ?>
     </h3>
     <pre><?php var_dump($viewModel->getData()) ?></pre>
 </div>

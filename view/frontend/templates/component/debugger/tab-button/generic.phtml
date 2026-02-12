@@ -17,11 +17,11 @@ $tabLabel = $block->getTabLabel();
 <div>
     <button
         role="tab"
-        aria-controls="tab-<?= $tabName ?>"
-        data-tab-name="<?= $tabName ?>"
+        aria-controls="tab-<?= $escaper->escapeHtml($tabName) ?>"
+        data-tab-name="<?= $escaper->escapeHtml($tabName) ?>"
         type="button"
         @click.prevent="switchTab"
         :class="buttonCssClass">
-        <?= __($tabLabel) ?>
+        <?= $escaper->escapeHtml(__($tabLabel)) ?>
     </button>
 </div>
