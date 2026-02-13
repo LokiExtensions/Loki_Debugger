@@ -32,11 +32,11 @@ $htmlId = $idConvertor->toElementId($block->getNameInLayout());
         <div class="absolute top-0 left-0 right-0" style="height:10px; cursor: ns-resize" x-ref="resizer"></div>
 
         <div class="<?= $escaper->escapeHtml($css('flex items-stretch overflow-x-auto px-2 pt-2 bg-orange-500', 'td')) ?>" role="tablist">
-            <?= $escaper->escapeHtml($childRenderer->all($block, 'loki-debugger.debugger.tab-button.')) ?>
+            <?= /** @noEscape */ $childRenderer->all($block, 'loki-debugger.debugger.tab-button.') ?>
         </div>
 
         <div style="height:100%;overflow:scroll">
-            <?= $escaper->escapeHtml($childRenderer->all($block, 'loki-debugger.debugger.tab.')) ?>
+            <?= /** @noEscape */ $childRenderer->all($block, 'loki-debugger.debugger.tab.') ?>
         </div>
     </div>
 </div>
