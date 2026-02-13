@@ -22,14 +22,16 @@ $idConvertor = $viewModelFactory->create(IdConvertor::class);
 $htmlId = $idConvertor->toElementId($block->getNameInLayout());
 ?>
 <div class="<?= $escaper->escapeHtml($css('')) ?>">
-    <button class="fixed bottom-0 right-0 bg-orange-500 text-white p-4 z-20" @click="toggleVisibility">
-        <span role="tab">
-            <?= $escaper->escapeHtml(__('Loki Debugger')) ?>
-        </span>
+    <button x-show="invisible" class="fixed bottom-0 right-0 bg-orange-500 text-white p-4 z-20" @click="toggleVisibility">
+        <?= $escaper->escapeHtml(__('Loki Debugger')) ?>
     </button>
 
     <div x-show="visible" x-cloak class="<?= $escaper->escapeHtml($css('fixed bottom-0 left-0 right-0 h-64 md:block w-full border-t border-orange-500 bg-orange-50', 'tabs')) ?>" x-ref="toolbar">
         <div class="absolute top-0 left-0 right-0" style="height:10px; cursor: ns-resize" x-ref="resizer"></div>
+
+        <button class="absolute right-0 top-0 text-white p-4 z-20" @click="toggleVisibility">
+            <?= $escaper->escapeHtml(__('Close')) ?>
+        </button>
 
         <div class="<?= $escaper->escapeHtml($css('flex items-stretch overflow-x-auto px-2 pt-2 bg-orange-500', 'td')) ?>" role="tablist">
             <?= /** @noEscape */ $childRenderer->all($block, 'loki-debugger.debugger.tab-button.') ?>

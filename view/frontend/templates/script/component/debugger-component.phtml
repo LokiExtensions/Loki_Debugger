@@ -13,6 +13,9 @@ use Magento\Framework\View\Element\Template;
             currentTab: '',
             components: [],
             visible: true,
+            invisible() {
+                return !this.visible;
+            },
             init() {
                 this.visible = parseInt(LokiComponentsStorage.load('debugger.visible')) === 1;
                 const toolbarHeight = parseInt(LokiComponentsStorage.load('debugger.height')) || 100;
