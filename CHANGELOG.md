@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 13 February 2026
+### Fixed
+- Move close button to top of toolbar
+- Do not escape child blocks
+- Prevent JS error when there are no tabs
+
 ## [1.1.0] - 12 February 2026
 ### Added
 - Add scrolling within toolbar
