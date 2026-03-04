@@ -20,9 +20,13 @@ use Magento\Framework\View\Element\Template;
 
 $idConvertor = $viewModelFactory->create(IdConvertor::class);
 $htmlId = $idConvertor->toElementId($block->getNameInLayout());
+$position = $block->getPosition();
+if (empty($position)) {
+    $position = 'bottom-0 right-0';
+}
 ?>
 <div class="<?= $escaper->escapeHtml($css('')) ?>">
-    <button x-show="invisible" class="fixed bottom-0 right-0 bg-orange-500 text-white p-4 z-20" @click="toggleVisibility">
+    <button x-show="invisible" class="<?= $escaper->escapeHtml($position . ' '.$css('fixed bg-orange-500 text-white p-4 z-20')) ?>" @click="toggleVisibility">
         <?= $escaper->escapeHtml(__('Loki Debugger')) ?>
     </button>
 
