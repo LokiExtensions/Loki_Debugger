@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 12 March 2026
+### Fixed
+- Make position configurable
+
 ## [1.1.1] - 13 February 2026
 ### Fixed
 - Move close button to top of toolbar
