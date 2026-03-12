@@ -19,5 +19,7 @@
         "loki-debugger.debugger"
     ],
     "config": [],
-    "tests": []
+    "tests": [],
+    "phpcs_severity": "9",
+    "phpstan_level": "5"
 }
