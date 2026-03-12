@@ -11,6 +11,7 @@
         "Magento_Backend",
         "Magento_Config",
         "Magento_Customer",
+        "Magento_Quote",
         "Magento_Store",
         "Yireo_CspUtilities"
     ],
