@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.3] - 22 April 2026
+### Fixed
+- Add message to RedirectException
+
 ## [1.1.2] - 12 March 2026
 ### Fixed
 - Make position configurable
