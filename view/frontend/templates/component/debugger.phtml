@@ -21,6 +21,7 @@ use Magento\Framework\View\Element\Template;
 $idConvertor = $viewModelFactory->create(IdConvertor::class);
 $htmlId = $idConvertor->toElementId($block->getNameInLayout());
 $position = $block->getPosition();
+
 if (empty($position)) {
     $position = 'bottom-0 right-0';
 }
