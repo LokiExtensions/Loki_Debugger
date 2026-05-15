@@ -1,7 +1,7 @@
 {
     "name": "loki/magento2-debugger",
     "version": "1.1.3",
-    "description": "N/A",
+    "description": "Developer debugger toolbar with various Loki Component related tabs",
     "keywords": [
         "dev",
         "loki-dev",
