@@ -68,7 +68,15 @@ use Magento\Framework\View\Element\Template;
             },
             loadComponents() {
                 try {
-                    this.components = Alpine.store('LokiComponents').getComponents();
+                    const components = [];
+                    Alpine.store('LokiComponents').getComponents().forEach((component) => {
+                        if (!component.id || !component.name || !component.elementId || !component.blockId || !component.value || !component.getDetails) {
+                            return;
+                        }
+
+                        components.push(component);
+                    });
+                    this.components = components;
                 } catch (e) {
                 }
             },
