@@ -69,7 +69,7 @@ use Magento\Framework\View\Element\Template;
             loadComponents() {
                 try {
                     const components = [];
-                    Alpine.store('LokiComponents').getComponents().forEach((component) => {
+                    Alpine.store('LokiComponents').getComponentArray().forEach((component) => {
                         if (!component.id || !component.name || !component.elementId || !component.blockId || !component.value || !component.getDetails) {
                             return;
                         }
