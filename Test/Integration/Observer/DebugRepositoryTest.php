@@ -8,6 +8,7 @@ use Magento\Framework\Event\ManagerInterface as EventManager;
 use Magento\TestFramework\Fixture\AppArea;
 use Magento\TestFramework\Fixture\AppIsolation;
 use Magento\TestFramework\Helper\Bootstrap;
+use Magento\TestFramework\ObjectManager as TestObjectManager;
 use PHPUnit\Framework\TestCase;
 
 #[AppArea('frontend')]
@@ -15,7 +16,9 @@ class DebugRepositoryTest extends TestCase
 {
     protected function setUp(): void
     {
-        Bootstrap::getObjectManager()->removeSharedInstance(Debugger::class);
+        $objectManager = Bootstrap::getObjectManager();
+        $this->assertInstanceOf(TestObjectManager::class, $objectManager);
+        $objectManager->removeSharedInstance(Debugger::class);
     }
 
     #[AppIsolation(true)]
