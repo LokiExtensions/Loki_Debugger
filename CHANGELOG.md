@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.5] - 30 October 2026
+### Fixed
+- List registered components in debugger components tab
+- Add `trim()` its second argument for PHP 8.6 compatibility
+
 ## [1.1.4] - 07 August 2026
 ### Fixed
 - Only show Loki Components to avoid CSP error
