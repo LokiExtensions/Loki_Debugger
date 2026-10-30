@@ -10,16 +10,24 @@
         "Loki_CssUtils",
         "Magento_Backend",
         "Magento_Config",
+        "Magento_Csp",
         "Magento_Customer",
+        "Magento_Directory",
+        "Magento_Eav",
         "Magento_Quote",
         "Magento_Store",
+        "Magento_Theme",
         "Yireo_CspUtilities"
     ],
     "components": [
         "loki-debugger.debugger"
     ],
     "config": [],
-    "tests": [],
+    "tests": {
+        "unit": 15,
+        "integration": 17,
+        "functional": 13
+    },
     "phpcs_severity": "9",
     "phpstan_level": "5",
     "module_name": "Loki_Debugger",
